@@ -1,0 +1,19 @@
+* {
+    color: #101727;
+    font-family: "Manrope", sans-serif;
+}
+
+a:active {
+    color: #fff;
+}
+
+.linier-Blue {
+    background: linear-gradient(to bottom, rgba(79, 57, 246, 1) 0%,rgba(149, 20, 250, 1) 100%);
+    /* color: white; */
+}
+
+.logo {
+    /* background: linear-gradient(to bottom, rgba(79, 57, 246, 1) 0%,rgba(149, 20, 250, 1) 100%); */
+    color: transparent;
+    background-clip: text;
+}
