@@ -1,7 +1,10 @@
 import { Play } from "lucide-react";
 import bannerImg from "../../assets/banner.png";
+import { useState } from "react";
 
 const Banner = () => {
+ const [bannerBtnToggle, setBannerBtnToggle] = useState(false)
+
   return (
     <>
       <div className="hero  my-5 md:my-15 lg:my-20 ">
@@ -20,17 +23,47 @@ const Banner = () => {
               faster today. <br /> Explore Products
             </p>
             <div className="flex gap-2  flex-col md:flex-row md:items-center">
-              <button className="btn linier-Blue  font-bold rounded-4xl !text-white text-[18px] py-[21px] px-6">
+             {
+                bannerBtnToggle?  <> 
+                 
+                   {/* <button onClick={() =>setBannerBtnToggle(false)} className="btn linier-Blue  font-bold rounded-4xl !text-white text-[18px] py-[21px] px-6">
+                Explore Products
+              </button> */}
+                
+
+              <span className="border p-[2px] rounded-full linier-Blue ">
+                   
+                          <button onClick={() => setBannerBtnToggle(false)} className="font-bold  btn rounded-full w-full">
+                                 <span className="">Explore Products</span>
+                          </button>
+                  
+              </span>
+
+                <button onClick={() =>setBannerBtnToggle(true)} className="btn linier-Blue  font-bold rounded-4xl !text-white text-[18px] py-[21px] px-6">
+                      <span className="flex gap-1 items-center !text-[#fff]"><Play size={20} color="#fff"/>  Watch Demo</span>
+              </button>
+              
+            
+              
+              
+              </>
+              
+              : 
+              
+              <> <button onClick={() =>setBannerBtnToggle(false)} className="btn linier-Blue  font-bold rounded-4xl !text-white text-[18px] py-[21px] px-6">
                 Explore Products
               </button>
 
               <span className="border p-[2px] rounded-full linier-Blue ">
                    
-                          <button className="font-bold  btn rounded-full w-full">
+                          <button onClick={() => setBannerBtnToggle(true)} className="font-bold  btn rounded-full w-full">
                                  <span className="logo linier-Blue flex gap-1 items-center"><Play size={20} color="#7d4bf8"/>Watch Demo</span>
                           </button>
                   
-              </span>
+              </span></>
+             }
+
+
 
               
 

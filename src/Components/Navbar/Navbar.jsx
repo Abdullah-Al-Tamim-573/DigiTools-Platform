@@ -1,6 +1,8 @@
-
+import { useState } from 'react';
+import '../../../src/App.css'
 
 const Navbar = () => {
+  const [toggle, setToggle] = useState(false);
   return (
     <>
       <nav className="navbar">
@@ -86,8 +88,12 @@ const Navbar = () => {
               d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
             />{" "}
           </svg>
-          <button className="btn hidden md:inline-flex rounded-4xl">LogIn</button>
-          <button className="btn linier-Blue rounded-4xl !text-white">Get Started</button>
+          <button onClick={() => setToggle(false)} className={`btn  rounded-4xl   ${toggle || ' linier-Blue shadow-lg !text-white'}`}>Get Started</button>
+          <button onClick={() => setToggle(true)} className={`btn hidden md:inline-flex rounded-4xl    ${toggle && ' !text-white linier-Blue'}`}>LogIn</button>
+          
+
+
+
         </div>
       </nav>
     </>
