@@ -26,7 +26,7 @@ const Banner = () => {
 
               <span className="border p-[2px] rounded-full linier-Blue ">
                    
-                          <button className="font-bold btn rounded-full w-full">
+                          <button className="font-bold  btn rounded-full w-full">
                                  <span className="logo linier-Blue flex gap-1 items-center"><Play size={20} color="#7d4bf8"/>Watch Demo</span>
                           </button>
                   
