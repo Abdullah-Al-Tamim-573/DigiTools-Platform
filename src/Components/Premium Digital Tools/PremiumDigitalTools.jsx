@@ -3,7 +3,6 @@ import Products from "./Products and Cards/Products";
 
 
 let productCardDatasPromise = fetch('/ProductCards.json').then(res => res.json());
-// console.log(productCardDatasPromise)
 
 
 const PremiumDigitalTools = () => {
@@ -14,7 +13,7 @@ const PremiumDigitalTools = () => {
     <>
       <section className="flex flex-col gap-3 md:gap-5 items-center">
         <h2 className="text-xl md:text-3xl lg:text-5xl font-extrabold">Premium Digital Tools</h2>
-        <p className="!text-[#627382]">
+        <p className="!text-[#627382] text-center">
           Choose from our curated collection of premium digital products
           designedto boost your productivity and creativity.
         </p>
