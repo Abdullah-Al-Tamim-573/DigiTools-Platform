@@ -1,5 +1,6 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import Products from "./Products and Cards/Products";
+import Cards from "./Products and Cards/Cards";
 
 
 let productCardDatasPromise = fetch('/ProductCards.json').then(res => res.json());
@@ -7,7 +8,7 @@ let productCardDatasPromise = fetch('/ProductCards.json').then(res => res.json()
 
 const PremiumDigitalTools = () => {
 
-  
+  let [toggleProductAndCardSection, setToggleProductAndCardSection] = useState('Products')
   
   return (
     <>
@@ -18,16 +19,27 @@ const PremiumDigitalTools = () => {
           designedto boost your productivity and creativity.
         </p>
         <div className="px-1 py-1 rounded-full btn-outline inline-block border">
-          <button className="btn bg-amber-400 rounded-full font-bold text-[17px] linier-Blue !text-white">Products</button>
-          <button className="btn  rounded-full">Cart (2)</button>
+
+          <button onClick={() => setToggleProductAndCardSection('Products')} className={`btn  rounded-full ${toggleProductAndCardSection === 'Products' && 'font-bold text-[17px] linier-Blue !text-white'}`}>Products</button>
+
+          <button onClick={() => setToggleProductAndCardSection('Cart')} 
+          className={`btn rounded-full ${toggleProductAndCardSection === 'Cart' && 'font-bold text-[17px] linier-Blue !text-white'}`}>Cart (2)</button>
+
+          {/* <button onClick={() => setToggleProductAndCardSection('Products')} className="btn bg-amber-400 rounded-full font-bold text-[17px] linier-Blue !text-white">Products</button>
+          <button onClick={() => setToggleProductAndCardSection('Cart')} className="btn  rounded-full">Cart (2)</button> */}
         </div>
       </section>
       <br /> <br />
       {/* products container */}
       <section>
                <Suspense fallback={<h3>Products data loading............</h3>}>
-                       <Products productCardDatasPromise={productCardDatasPromise}></Products>
+               {
+                  toggleProductAndCardSection === 'Products'? <Products productCardDatasPromise={productCardDatasPromise}></Products> : <Cards></Cards>
+               }
+                       
+                       
                </Suspense>
+               
       </section>
     </>
   );
