@@ -1,6 +1,7 @@
 import "./App.css";
 import Banner from "./Components/Banner/Banner";
 import Navbar from "./Components/Navbar/Navbar";
+import PremiumDigitalTools from "./Components/Premium Digital Tools/PremiumDigitalTools";
 import StatusBar from "./Components/StatusBar/StatusBar";
 
 function App() {
@@ -15,7 +16,10 @@ function App() {
         <section className="linier-Blue py-5">
                    <StatusBar></StatusBar>
         </section>
-        <br /> <br />
+        
+        <section className="lg:max-w-[80%] mx-auto mt-3 md:mt-12 lg:mt-17">
+              <PremiumDigitalTools></PremiumDigitalTools>
+        </section>
     
     </>
   );
