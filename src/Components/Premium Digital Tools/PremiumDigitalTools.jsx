@@ -1,10 +1,14 @@
-import { use } from "react";
+import { Suspense } from "react";
+import Products from "./Products and Cards/Products";
 
 
-const PremiumDigitalTools = ({productCardDatasPromise}) => {
+let productCardDatasPromise = fetch('/ProductCards.json').then(res => res.json());
+// console.log(productCardDatasPromise)
 
-  let productCardData = use(productCardDatasPromise)
-  console.log(productCardData)
+
+const PremiumDigitalTools = () => {
+
+  
   
   return (
     <>
@@ -20,6 +24,12 @@ const PremiumDigitalTools = ({productCardDatasPromise}) => {
         </div>
       </section>
       <br /> <br />
+      {/* products container */}
+      <section>
+               <Suspense fallback={<h3>Products data loading............</h3>}>
+                       <Products productCardDatasPromise={productCardDatasPromise}></Products>
+               </Suspense>
+      </section>
     </>
   );
 };
