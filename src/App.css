@@ -18,15 +18,7 @@ a:active {
     background-clip: text;
 }
 
-.btn-gradient-border {
-  border: 3px solid;
-  border-image: linear-gradient(45deg, #4f39f6, #9514fa) 1;
-  border-radius: 200px; /* চাইলে */
-  padding: 8px 20px;
-  background-color: white;
-  color: #000;
-  font-weight: bold;
-}
+
 
 
 

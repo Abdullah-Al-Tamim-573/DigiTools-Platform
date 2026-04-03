@@ -19,20 +19,25 @@ const Banner = () => {
               productivity <br /> software—all in one place. Start creating
               faster today. <br /> Explore Products
             </p>
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2  flex-col md:flex-row md:items-center">
               <button className="btn linier-Blue  font-bold rounded-4xl !text-white text-[18px] py-[21px] px-6">
                 Explore Products
               </button>
-              
-                <button className="font-bold linier-Blue logo btn-gradient-border"><Play size={20}/> Watch Demo</button>
+
+              <span className="border p-[2px] rounded-full linier-Blue ">
                    
-              {/* <span className="btn  py-5 px-5 rounded-4xl linier-Blue">
-                    <span className="flex items-center gap-1 bg-white py-5 px-10 rounded-4xl">
-                            <Play size={20}/>
-                <button className="font-bold linier-Blue logo"> Watch Demo</button>
-                    </span>
-              </span> */}
+                          <button className="font-bold btn rounded-full w-full">
+                                 <span className="logo linier-Blue flex gap-1 items-center"><Play size={20} color="#7d4bf8"/>Watch Demo</span>
+                          </button>
+                  
+              </span>
+
               
+
+
+
+
+             
             </div>
           </div>
         </div>
