@@ -1,6 +1,11 @@
+import { use } from "react";
 
 
-const PremiumDigitalTools = () => {
+const PremiumDigitalTools = ({productCardDatasPromise}) => {
+
+  let productCardData = use(productCardDatasPromise)
+  console.log(productCardData)
+  
   return (
     <>
       <section className="flex flex-col gap-3 md:gap-5 items-center">
