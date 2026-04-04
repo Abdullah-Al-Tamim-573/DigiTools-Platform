@@ -1,6 +1,14 @@
+import { useState } from "react";
 import "../../../App.css";
 
-const Product = ({ product }) => {
+const Product = ({ product, showAddToCardTextInProductCardBtn, setShowAddToCardTextInProductCardBtn}) => {
+
+
+   const handleAddToCard = (id, name) => {
+      setShowAddToCardTextInProductCardBtn(name);
+      
+   }
+       console.log(showAddToCardTextInProductCardBtn)
   let { id, name, description, price, icon, alt, tag, features } = product;
 
   return (
@@ -14,17 +22,7 @@ const Product = ({ product }) => {
                    text-[14px] font-medium px-4 py-3 rounded-4xl`}>
                     {tag}
                </span>
-                 {/* <span className="badge badge-xs  absolute top-3  right-3 !text-[#0A883E] bg-[#dbfce7]  text-[14px] font-medium px-4 py-3 rounded-4xl">
-                    {tag}
-               </span> */}
-                 {/* <span className="badge badge-xs  absolute top-3  right-3 !text-[#6b2bf8] bg-[#e1e7ff]  text-[14px] font-medium px-4 py-3 rounded-4xl">
-                    {tag}
-               </span> */}
-            
-          
-          {/* <span className="badge badge-xs badge-warning absolute top-3 right-3 !text-[#BB4D00] bg-[#fef3c6] text-[14px] font-medium px-4 py-3 rounded-4xl">
-            {tag}
-          </span> */}
+                
           <span className="border p-2 rounded-full w-fit">
             <img src={icon} alt={alt} />
           </span>
@@ -74,8 +72,12 @@ const Product = ({ product }) => {
             </li>
           </ul>
           <div className="mt-6">
-            <button className="btn !text-white linier-Blue btn-block">
-              Buy Now
+            <button onClick={() => handleAddToCard(id, name)} className={`btn !text-white  btn-block 
+              ${showAddToCardTextInProductCardBtn === name? 'bg-[green]': 'linier-Blue'}
+              rounded-4xl`}>
+              {
+                 showAddToCardTextInProductCardBtn === name? 'Add To Card': 'Buy Now'
+              }
             </button>
           </div>
         </div>

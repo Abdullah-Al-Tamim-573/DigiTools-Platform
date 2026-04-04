@@ -4,7 +4,7 @@ import { ShoppingCart } from "lucide-react";
 const Cards = () => {
   return (
     <>
-      <section className="border p-5 rounded-xl my-6">
+      <section className="border p-5 rounded-xl my-4">
         <h3 className="text-2xl font-bold">Your Cart</h3> 
 
 
