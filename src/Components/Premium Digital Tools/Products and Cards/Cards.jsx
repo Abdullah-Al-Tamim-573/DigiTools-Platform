@@ -2,7 +2,9 @@ import { ShoppingCart } from "lucide-react";
 import Card from "./Card";
 
 const Cards = ({ productCardData, setProductCardData }) => {
-  // console.log(productCardData)
+  const total = productCardData.reduce((pre, curr) => {
+          return pre + curr.price
+  }, 0) 
   return (
     <>
       <section className="border p-5 rounded-xl my-4">
@@ -32,7 +34,7 @@ const Cards = ({ productCardData, setProductCardData }) => {
       <section className="my-10 p-3 border">
           <div className="flex justify-between items-center p-3">
                <p className="!text-[#627382]">Total</p>
-               <p className="font-bold text-xl">$78</p>
+               <p className="font-bold text-xl">${total}</p>
                
           </div>
           <button onClick={() => setProductCardData([])} className="btn btn-primary !text-[#fff] w-full rounded-4xl">Proceed to Checkout</button>
