@@ -1,8 +1,12 @@
 import imgpart from "../../../assets/products/portfolio.png"
 
-const Card = ({cardData}) => {
+const Card = ({cardData, handleRemoveCardData}) => {
 
     let {id, icon, alt, name, price} = cardData;
+
+    let handleRemoveItmes = () => {
+           
+    }
     
     return (
         <>
@@ -15,7 +19,7 @@ const Card = ({cardData}) => {
                          </div>
                   </div>
 
-                  <button className="!text-[#FF3980] btn font-bold">
+                  <button onClick={() => handleRemoveCardData(cardData)} className="!text-[#FF3980] btn font-bold">
                         Remove
                   </button>
 

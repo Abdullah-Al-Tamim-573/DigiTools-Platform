@@ -6,7 +6,7 @@ import Cards from "./Products and Cards/Cards";
 let productCardDatasPromise = fetch('/ProductCards.json').then(res => res.json());
 
 
-const PremiumDigitalTools = ({handleProductCardData, productCardData, setProductCardData }) => {
+const PremiumDigitalTools = ({handleProductCardData, productCardData, setProductCardData, handleRemoveCardData }) => {
 
   let [toggleProductAndCardSection, setToggleProductAndCardSection] = useState('Products')
   
@@ -34,7 +34,7 @@ const PremiumDigitalTools = ({handleProductCardData, productCardData, setProduct
                <Suspense fallback={<h3>Products data loading............</h3>}>
                {
                   toggleProductAndCardSection === 'Products'? <Products productCardDatasPromise={productCardDatasPromise} handleProductCardData={handleProductCardData}></Products> : 
-                  <Cards productCardData={productCardData} setProductCardData={setProductCardData}></Cards>
+                  <Cards productCardData={productCardData} handleRemoveCardData={handleRemoveCardData} setProductCardData={setProductCardData}></Cards>
                }
                                   
                </Suspense>

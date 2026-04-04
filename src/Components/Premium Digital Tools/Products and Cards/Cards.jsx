@@ -1,7 +1,7 @@
 import { ShoppingCart } from "lucide-react";
 import Card from "./Card";
 
-const Cards = ({ productCardData, setProductCardData }) => {
+const Cards = ({ productCardData, setProductCardData, handleRemoveCardData }) => {
   const total = productCardData.reduce((pre, curr) => {
           return pre + curr.price
   }, 0) 
@@ -23,7 +23,7 @@ const Cards = ({ productCardData, setProductCardData }) => {
           // card data component
           <section>
             {productCardData.map((cardData) => (
-              <Card cardData={cardData}></Card>
+              <Card handleRemoveCardData={handleRemoveCardData} cardData={cardData}></Card>
             ))}
           </section>
         )}
