@@ -1,7 +1,7 @@
 import { ShoppingCart } from "lucide-react";
 
 
-const Cards = () => {
+const Cards = ({productCardData}) => {
   return (
     <>
       <section className="border p-5 rounded-xl my-4">

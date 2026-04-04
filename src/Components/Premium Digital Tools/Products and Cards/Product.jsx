@@ -1,14 +1,15 @@
-import { useState } from "react";
+
 import "../../../App.css";
 
-const Product = ({ product, showAddToCardTextInProductCardBtn, setShowAddToCardTextInProductCardBtn}) => {
+const Product = ({ product, showAddToCardTextInProductCardBtn, setShowAddToCardTextInProductCardBtn, handleProductCardData}) => {
 
 
    const handleAddToCard = (id, name) => {
       setShowAddToCardTextInProductCardBtn(name);
+      handleProductCardData(product)
       
    }
-       console.log(showAddToCardTextInProductCardBtn)
+       
   let { id, name, description, price, icon, alt, tag, features } = product;
 
   return (

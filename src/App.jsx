@@ -1,5 +1,6 @@
 
 
+import { useState } from "react";
 import "./App.css";
 import Banner from "./Components/Banner/Banner";
 import Navbar from "./Components/Navbar/Navbar";
@@ -11,13 +12,20 @@ import StatusBar from "./Components/StatusBar/StatusBar";
 
 function App() {
 
+  let [productCardData, setProductCardData] = useState([]);
+
+  let handleProductCardData = (cardObj) => {
+       setProductCardData([...productCardData, cardObj])
+  }
+
+ 
   
 
   return (
     <>
         
         <section className="lg:max-w-[80%] mx-auto">
-                  <Navbar ></Navbar>
+                  <Navbar productCardData={productCardData}></Navbar>
                   <Banner></Banner>
         </section>
 
@@ -27,7 +35,7 @@ function App() {
         
         <section className="lg:max-w-[80%] mx-auto mt-3 md:mt-12 lg:mt-17">
               
-                    <PremiumDigitalTools></PremiumDigitalTools>
+                    <PremiumDigitalTools handleProductCardData={handleProductCardData} productCardData={productCardData}></PremiumDigitalTools>
               
         </section>
     
