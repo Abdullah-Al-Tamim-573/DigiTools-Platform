@@ -1,5 +1,6 @@
 import { ShoppingCart } from "lucide-react";
 import Card from "./Card";
+import { toast } from "react-toastify";
 
 const Cards = ({ productCardData, setProductCardData, handleRemoveCardData }) => {
   const total = productCardData.reduce((pre, curr) => {
@@ -7,7 +8,7 @@ const Cards = ({ productCardData, setProductCardData, handleRemoveCardData }) =>
   }, 0) 
   return (
     <>
-      <section className="border p-5 rounded-xl my-4">
+      <section className="shadow-2xl p-5 rounded-xl my-4">
         <h3 className="text-2xl font-bold">Your Cart</h3>
 
         {/* adding card section */}
@@ -21,24 +22,30 @@ const Cards = ({ productCardData, setProductCardData, handleRemoveCardData }) =>
           </section>
         ) : (
           // card data component
-          <section>
+          <section className="my-5">
             {productCardData.map((cardData) => (
               <Card handleRemoveCardData={handleRemoveCardData} cardData={cardData}></Card>
             ))}
           </section>
         )}
-      </section>
 
-      {/* adding product price count and proccess to checout section */}
+
+       
       
-      <section className="my-10 p-3 border">
+      <section className="my-8 p-3 ">
           <div className="flex justify-between items-center p-3">
                <p className="!text-[#627382]">Total</p>
                <p className="font-bold text-xl">${total}</p>
                
           </div>
-          <button onClick={() => setProductCardData([])} className="btn btn-primary !text-[#fff] w-full rounded-4xl">Proceed to Checkout</button>
+          <button onClick={() => {
+            setProductCardData([])
+            toast.success('Checkout Successfully')
+          }} className="btn btn-primary !text-[#fff] w-full rounded-4xl">Proceed to Checkout</button>
       </section>
+      </section>
+
+      
     </>
   );
 };

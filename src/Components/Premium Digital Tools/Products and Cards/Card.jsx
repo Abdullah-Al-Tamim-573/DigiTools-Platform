@@ -1,16 +1,14 @@
-import imgpart from "../../../assets/products/portfolio.png"
+
 
 const Card = ({cardData, handleRemoveCardData}) => {
 
-    let {id, icon, alt, name, price} = cardData;
+    let { icon, alt, name, price} = cardData;
 
-    let handleRemoveItmes = () => {
-           
-    }
+    
     
     return (
         <>
-            <div className="shadow-2xl rounded-[10px] flex justify-between items-center p-5 py-14 md:py-17">
+            <div className="shadow-2xl mb-3 rounded-[10px] flex justify-between items-center px-5 py-10 ">
                   <div className="flex gap-4 items-center">
                          <img src={icon} alt={alt} />
                          <div className="flex flex-col gap-1">

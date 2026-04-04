@@ -4,6 +4,7 @@ import Banner from "./Components/Banner/Banner";
 import Navbar from "./Components/Navbar/Navbar";
 import PremiumDigitalTools from "./Components/Premium Digital Tools/PremiumDigitalTools";
 import StatusBar from "./Components/StatusBar/StatusBar";
+import { toast } from "react-toastify";
 
 function App() {
   let [productCardData, setProductCardData] = useState([]);
@@ -20,12 +21,9 @@ function App() {
   const handleRemoveCardData = (cardObj) => {
           let removeItems = productCardData.filter(item => item.id !== cardObj.id)
           setProductCardData(removeItems)
+          toast.success('Delete Product SuccessFully')
   }
 
-  // console.log(productCardData)
-   
-
-  // console.log(productCardData);
 
   return (
     <>
@@ -47,6 +45,7 @@ function App() {
           
         ></PremiumDigitalTools>
       </section>
+      
     </>
   );
 }

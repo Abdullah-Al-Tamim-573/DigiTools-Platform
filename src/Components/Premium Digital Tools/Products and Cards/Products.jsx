@@ -1,5 +1,5 @@
 import { use, useState } from "react";
-// import cardImg from '../../../assets/products/social-media.png'
+
 import Product from "./product";
 
 const Products = ({ productCardDatasPromise, handleProductCardData }) => {

@@ -1,29 +1,34 @@
-
+import { toast, } from "react-toastify";
 import "../../../App.css";
 
-const Product = ({ product, showAddToCardTextInProductCardBtn, setShowAddToCardTextInProductCardBtn, handleProductCardData}) => {
+const Product = ({
+  product,
+  showAddToCardTextInProductCardBtn,
+  setShowAddToCardTextInProductCardBtn,
+  handleProductCardData,
+}) => {
+  const handleAddToCard = (id, name) => {
+    setShowAddToCardTextInProductCardBtn(name);
+    handleProductCardData(product);
 
+   toast.success("Add Product Successfully")
+  };
+   
 
-   const handleAddToCard = (id, name) => {
-      setShowAddToCardTextInProductCardBtn(name);
-      handleProductCardData(product)
-      
-   }
-       
   let { id, name, description, price, icon, alt, tag, features } = product;
 
   return (
     <>
       <div className="card w-[85%] justify-items-center mx-auto md:w-75 lg:w-96 bg-base-100 shadow-sm relative border ">
         <div className="card-body">
-          
-           
-                 <span className={`badge badge-xs  absolute top-3  right-3 
-                 ${tag==='Best Seller'? '!text-[#BB4D00] bg-[#fef3c6]': tag==='Popular'? '!text-[#6b2bf8] bg-[#e1e7ff]': '!text-[#0A883E] bg-[#dbfce7]'}
-                   text-[14px] font-medium px-4 py-3 rounded-4xl`}>
-                    {tag}
-               </span>
-                
+          <span
+            className={`badge badge-xs  absolute top-3  right-3 
+                 ${tag === "Best Seller" ? "!text-[#BB4D00] bg-[#fef3c6]" : tag === "Popular" ? "!text-[#6b2bf8] bg-[#e1e7ff]" : "!text-[#0A883E] bg-[#dbfce7]"}
+                   text-[14px] font-medium px-4 py-3 rounded-4xl`}
+          >
+            {tag}
+          </span>
+
           <span className="border p-2 rounded-full w-fit">
             <img src={icon} alt={alt} />
           </span>
@@ -73,12 +78,15 @@ const Product = ({ product, showAddToCardTextInProductCardBtn, setShowAddToCardT
             </li>
           </ul>
           <div className="mt-6">
-            <button onClick={() => handleAddToCard(id, name)} className={`btn !text-white  btn-block 
-              ${showAddToCardTextInProductCardBtn === name? 'bg-[green]': 'linier-Blue'}
-              rounded-4xl`}>
-              {
-                 showAddToCardTextInProductCardBtn === name? 'Add To Card': 'Buy Now'
-              }
+            <button
+              onClick={() => handleAddToCard(id, name)}
+              className={`btn !text-white  btn-block 
+              ${showAddToCardTextInProductCardBtn === name ? "bg-[green]" : "linier-Blue"}
+              rounded-4xl`}
+            >
+              {showAddToCardTextInProductCardBtn === name
+                ? "Add To Card"
+                : "Buy Now"}
             </button>
           </div>
         </div>
