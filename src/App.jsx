@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import PremiumDigitalTools from "./Components/Premium Digital Tools/PremiumDigitalTools";
 import StatusBar from "./Components/StatusBar/StatusBar";
 import { toast } from "react-toastify";
+import GetStarted from "./Components/Get Started in 3 Steps/GetStarted";
 
 function App() {
   let [productCardData, setProductCardData] = useState([]);
@@ -44,6 +45,9 @@ function App() {
           handleProductCardData={handleProductCardData}
           
         ></PremiumDigitalTools>
+      </section>
+      <section className="lg:max-w-[80%] mx-auto mt-15 md:mt-12 lg:mt-25 flex gap-5 flex-col text-center my-5">
+             <GetStarted></GetStarted>
       </section>
       
     </>
