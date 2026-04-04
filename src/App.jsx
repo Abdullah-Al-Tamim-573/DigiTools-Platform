@@ -17,7 +17,7 @@ function App() {
   }   
   }
 
-  console.log(productCardData)
+  // console.log(productCardData)
    
 
   // console.log(productCardData);
@@ -35,6 +35,8 @@ function App() {
 
       <section className="lg:max-w-[80%] mx-auto mt-3 md:mt-12 lg:mt-17">
         <PremiumDigitalTools
+          setProductCardData={setProductCardData}
+          productCardData={productCardData}
           handleProductCardData={handleProductCardData}
           productCardData={productCardData}
         ></PremiumDigitalTools>

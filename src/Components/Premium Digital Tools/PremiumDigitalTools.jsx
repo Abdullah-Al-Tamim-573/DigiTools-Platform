@@ -6,7 +6,7 @@ import Cards from "./Products and Cards/Cards";
 let productCardDatasPromise = fetch('/ProductCards.json').then(res => res.json());
 
 
-const PremiumDigitalTools = ({handleProductCardData, productCardData }) => {
+const PremiumDigitalTools = ({handleProductCardData, productCardData, setProductCardData }) => {
 
   let [toggleProductAndCardSection, setToggleProductAndCardSection] = useState('Products')
   
@@ -23,7 +23,7 @@ const PremiumDigitalTools = ({handleProductCardData, productCardData }) => {
           <button onClick={() => setToggleProductAndCardSection('Products')} className={`btn  rounded-full ${toggleProductAndCardSection === 'Products' && 'font-bold text-[17px] linier-Blue !text-white'}`}>Products</button>
 
           <button onClick={() => setToggleProductAndCardSection('Cart')} 
-          className={`btn rounded-full ${toggleProductAndCardSection === 'Cart' && 'font-bold text-[17px] linier-Blue !text-white'}`}>Cart (2)</button>
+          className={`btn rounded-full ${toggleProductAndCardSection === 'Cart' && 'font-bold text-[17px] linier-Blue !text-white'}`}>Cart ({productCardData.length})</button>
 
           
         </div>
@@ -34,7 +34,7 @@ const PremiumDigitalTools = ({handleProductCardData, productCardData }) => {
                <Suspense fallback={<h3>Products data loading............</h3>}>
                {
                   toggleProductAndCardSection === 'Products'? <Products productCardDatasPromise={productCardDatasPromise} handleProductCardData={handleProductCardData}></Products> : 
-                  <Cards productCardData={productCardData}></Cards>
+                  <Cards productCardData={productCardData} setProductCardData={setProductCardData}></Cards>
                }
                                   
                </Suspense>
