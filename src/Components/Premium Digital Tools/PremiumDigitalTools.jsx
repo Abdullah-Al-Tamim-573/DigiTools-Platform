@@ -25,8 +25,7 @@ const PremiumDigitalTools = () => {
           <button onClick={() => setToggleProductAndCardSection('Cart')} 
           className={`btn rounded-full ${toggleProductAndCardSection === 'Cart' && 'font-bold text-[17px] linier-Blue !text-white'}`}>Cart (2)</button>
 
-          {/* <button onClick={() => setToggleProductAndCardSection('Products')} className="btn bg-amber-400 rounded-full font-bold text-[17px] linier-Blue !text-white">Products</button>
-          <button onClick={() => setToggleProductAndCardSection('Cart')} className="btn  rounded-full">Cart (2)</button> */}
+          
         </div>
       </section>
       <br /> <br />
@@ -36,8 +35,7 @@ const PremiumDigitalTools = () => {
                {
                   toggleProductAndCardSection === 'Products'? <Products productCardDatasPromise={productCardDatasPromise}></Products> : <Cards></Cards>
                }
-                       
-                       
+                                  
                </Suspense>
                
       </section>
