@@ -6,6 +6,7 @@ import PremiumDigitalTools from "./Components/Premium Digital Tools/PremiumDigit
 import StatusBar from "./Components/StatusBar/StatusBar";
 import { toast } from "react-toastify";
 import GetStarted from "./Components/Get Started in 3 Steps/GetStarted";
+import SimpleTransparentPricing from "./Components/Simple Transparent Pricing/SimpleTransparentPricing";
 
 function App() {
   let [productCardData, setProductCardData] = useState([]);
@@ -46,8 +47,12 @@ function App() {
           
         ></PremiumDigitalTools>
       </section>
-      <section className="lg:max-w-[80%] mx-auto mt-15 md:mt-12 lg:mt-25 flex gap-5 flex-col text-center my-5">
+      <section className="lg:max-w-[80%] mx-auto mt-15 md:mt-12 lg:mt-25 flex gap-4 flex-col text-center my-5">
              <GetStarted></GetStarted>
+      </section>
+
+      <section className="lg:max-w-[80%] mx-auto mt-15 md:mt-12 lg:mt-25  flex flex-col gap-4">
+              <SimpleTransparentPricing></SimpleTransparentPricing>
       </section>
       
     </>

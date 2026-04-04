@@ -7,11 +7,11 @@ import startCreatingImg from '../../assets/rocket.png'
 const GetStarted = () => {
   return (
     <>
-      <h2 className="font-extrabold text-3xl md:text-4xl lg:text-5xl">
+      <h2 className="font-extrabold text-2xl md:text-4xl lg:text-5xl">
         Get Started in 3 Steps
       </h2>
       <p className="!text-[#627382] mb-3">
-        Start using premium digital tools in minutes, not hours.
+        Start using premium digital tools in minutes, <br /> not hours.
       </p>
       
       <div className="box grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
