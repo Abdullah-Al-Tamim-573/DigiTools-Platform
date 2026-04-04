@@ -35,7 +35,7 @@ const Cards = ({ productCardData, setProductCardData }) => {
                <p className="font-bold text-xl">$78</p>
                
           </div>
-          <button className="btn btn-primary !text-[#fff] w-full rounded-4xl">Proceed to Checkout</button>
+          <button onClick={() => setProductCardData([])} className="btn btn-primary !text-[#fff] w-full rounded-4xl">Proceed to Checkout</button>
       </section>
     </>
   );
