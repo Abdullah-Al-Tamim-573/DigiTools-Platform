@@ -57,7 +57,7 @@ function App() {
       </section>
 
       {/* footer */}
-      <section className="bg-[#101727]">
+      <section className="bg-[#101727] ">
              <Footer></Footer>
       </section>
       
